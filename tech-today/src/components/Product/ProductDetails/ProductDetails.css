@@ -7,7 +7,7 @@
 .product-details {
     padding: 1em;
     margin: 0 auto;
-    max-width: 80%;
+    max-width: 90%;
     display: flex;
     align-items: flex-start;
     gap: 1em;
@@ -24,9 +24,13 @@
 }
 
 .details-image {
-    flex: 1 1 55%;
-    border-radius: 1em;
-    max-width: 700px;
+  flex: 1 1 55%;
+  border-radius: 1em;
+  max-width: 700px;
+  height: auto;
+  aspect-ratio: 3/2 auto;
+
+  overflow: hidden;
 }
 
 .details-details {
@@ -39,11 +43,117 @@
 
 } 
 
+
 .details-brand {
     display: flex;
 }
 
-button {
+.owner-controls {
+    margin-top: 1em;
+}
+
+.button {
+    color: black;
+    text-decoration: none;
+    margin-right: 0.5em;
     padding: 0.8em;
     background-color: rgb(249, 230, 16);
+    border-radius: 0.5em;
+    border: none;
+    outline: none;
+}
+
+button.button {
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.details-price {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: rgb(50, 49, 42); 
+  margin-bottom: 0.5em;
+}
+
+.details-details {
+  font-size: 1.2em;
+  color: #555; 
+  margin-bottom: 1em;
+}
+
+.product-comments {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .add-comment-form {
+    margin-top: 1em;
+    margin-bottom: 1.2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgb(183, 182, 182);
+  }
+  
+  .add-comment-form textarea {
+    width: 80%;
+    margin: 0 auto; 
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .add-comment-form input[type="submit"] {
+    background-color: rgb(249, 230, 16); 
+    display: block;
+    margin: 0 auto; 
+    color: #333;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+  }
+  
+  .add-comment-form input[type="submit"]:hover {
+    background-color: #e0a800; 
+  }
+  
+  .product-comments ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .comment {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .comment-user {
+    margin: 0;
+    color: #333;
+  }
+  
+  .comment-text {
+    margin-top: 5px;
+    color: #000 !important;
+    font-size: 1.2em;
+  }
+  
+  .product-comments p {
+    margin: 0;
+    color: #777;
+  }
+
+  .added-products {
+    margin: 0 auto;
+    padding-left: 3em;
+    flex-wrap: wrap;
 }

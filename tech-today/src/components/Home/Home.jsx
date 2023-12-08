@@ -12,17 +12,22 @@ export default function Home() {
     useEffect(() => {
       productService.getAll()
         .then(result => setProducts(result))
+        .catch(err => {
+            console.log(err);
+        })
     }, [])
 
     return (
         <>
-            <h1>All products</h1>
-            <div className='product-grid'>
-                {products.map(product => (
-                    <ProductCard {...product} key={product._id} />
-                ))}
-                {products.length === 0 && <h2 className='no-products'>No products yet</h2>}
-            </div>
+            <h1 className='home-title'>Latest Products</h1>
+                <div className="main-grid">
+                    <div className='product-grid'>
+                    {products.reverse().map(product => (
+                        <ProductCard {...product} key={product._id} />
+                    ))}
+                    {products.length === 0 && <h2 className='no-products'>No products yet</h2>}
+                </div>
+                </div>
 
             
         </>

@@ -1,21 +1,25 @@
 import { Link } from 'react-router-dom'
 
+import './Login.css'
+
 import  useForm  from '../../hooks/useForm'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import AuthContext from '../../contexts/authContext'
 
 export default function Login() {
-    const { loginSubmitHandler} = useContext(AuthContext)
+    const { loginSubmitHandler,error} = useContext(AuthContext)
     const {values, onChange, onSubmit } = useForm(loginSubmitHandler,{ 
         email: '',
-        password: ''
+        password: '',
     })
+
 
     return (
         <>
+            {error && (<p className='error-message'>{error.message}</p>)}
             <div className="page-login">
                 <form className="login-form" onSubmit={onSubmit}>
-                    <h1>User login</h1>
+                    <h1>Login</h1>
                     <label htmlFor="email">Email</label>
                     <input 
                         className="form-email"
@@ -25,7 +29,6 @@ export default function Login() {
                         placeholder="example@web.com"
                         onChange={onChange}
                         values={values.email}
-
                     />
                     <label htmlFor="password">Password</label>
                     <input 
