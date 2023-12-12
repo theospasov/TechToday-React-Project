@@ -102,7 +102,7 @@ export default function ProductEdit() {
         return (
             <div className="page-register">
                 <form className="login-form" onSubmit={productEditHandler}>
-                    <h1>Add New Product</h1>
+                    <h1>Edit {product.name}</h1>
                     <label htmlFor="name">Name</label>
                     <input
                         id="name"
@@ -122,7 +122,7 @@ export default function ProductEdit() {
                     <input
                         id="price"
                         name="price"
-                        type="numbe-1"
+                        type="number"
                         className="form-price"
                         placeholder="999.99"
                         onChange={onChange}
