@@ -57,6 +57,7 @@ export const AuthProvider = ({children}) => {
         userId: auth._id,
         isAuthenticated: !!auth.accessToken,
         error,
+        wishlistedProducts: auth.wishlistedProducts,
     }
     return (
         <AuthContext.Provider value={values}>

@@ -18,3 +18,4 @@ export const register = async (email, password, username) => request.post(`${bas
 })
 
 export const logout = async () => request.get(`${baseUrl}/logout`)
+

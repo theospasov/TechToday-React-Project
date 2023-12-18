@@ -8,7 +8,7 @@ import { ProductCard } from "../ProductCard/ProductCard"
 
 export default function ProductProfile() {
     const [products, setProducts] = useState([])
-    const {userId, username} = useContext(AuthContext)
+    const {userId, username, wishlistedProducts} = useContext(AuthContext)
     
     useEffect(() => {
         productService.getAllUserCreated(userId)
@@ -19,7 +19,7 @@ export default function ProductProfile() {
 
     }, [])
 
-
+    // console.log(JSON.parse(wishlistedProducts));
     return (
         <div className="profile-products">
             <h2>Hey {username} 👋, {products.length >= 1 ? <span>these are your added products</span> : <span>add some products and they will appear here</span>}</h2>

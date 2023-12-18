@@ -24,6 +24,21 @@ export async function getAllUserCreated(userId) {
     }
 }
 
+export async function getWishlist(wishlistedProducts) {
+    // console.log(JSON.parse(wishlistedProducts));
+    const wishlistedProducts = []
+    try {
+        if (wishlistedProducts) {
+            wishlistedProducts.forEach(element => {
+                wishlistedProducts.push(element)
+            });
+        }
+        return wishlistedProducts
+    } catch (error) {
+        
+    }
+}
+
 
 export async function add(productData) {
     const result = await request.post(baseUrl, productData)
