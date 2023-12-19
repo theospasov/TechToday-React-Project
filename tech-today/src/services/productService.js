@@ -26,7 +26,7 @@ export async function getAllUserCreated(userId) {
 
 export async function getWishlist(wishlistedProducts) {
     // console.log(JSON.parse(wishlistedProducts));
-    const wishlistedProducts = []
+    // const wishlistedProducts = []
     try {
         if (wishlistedProducts) {
             wishlistedProducts.forEach(element => {

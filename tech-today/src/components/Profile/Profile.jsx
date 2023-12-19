@@ -10,19 +10,22 @@ import Path from "../../paths"
 export default function Profile() {
     const [menu, setMenu] = useState('created')
 
-    function menuSwitcher() {
-        if (menu == 'created') {
+    function menuSwitcher(e) {
+        let selected = e.target.textContent
+        if (selected == 'Wishlisted Products') {
             setMenu('wishlist')
         } else {
             setMenu('created')
         }
     }
 
+
     return (
         <div className="user-profile">
             <ul className="profile-options">
                     <li><button onClick={menuSwitcher}>Created Products</button></li>
                     <li><button onClick={menuSwitcher}>Wishlisted Products</button></li>
+                    <li><button onClick={menuSwitcher}>Test Products</button></li>
                     <li><Link className='profile-nav-add profile-nav' to={'/product/add'}>Add New Product</Link></li>
                     <li><Link className='profile-nav-logout profile-nav' to={Path.Logout}>Logout</Link></li>
             </ul>
