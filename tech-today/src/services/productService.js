@@ -4,14 +4,18 @@ const baseUrl = 'http://localhost:3030/data/products'
 
 export async function getAll() {
     const result = await request.get( baseUrl )
-
+    
     return result
 }
 
 export async function getOne(productId) {
+try {
     const result = await request.get(`${baseUrl}/${productId}`)
     
     return result
+} catch (error) {
+    console.log(error);
+}
 }
 
 export async function getAllUserCreated(userId) {
@@ -25,17 +29,20 @@ export async function getAllUserCreated(userId) {
 }
 
 export async function getWishlist(wishlistedProducts) {
-    // console.log(JSON.parse(wishlistedProducts));
-    // const wishlistedProducts = []
+    const wishlistedProductsDetails = []
+
     try {
-        if (wishlistedProducts) {
-            wishlistedProducts.forEach(element => {
-                wishlistedProducts.push(element)
-            });
+        if (wishlistedProducts.length > 0) {
+            
+            await Promise.all(wishlistedProducts.map(async (element) => {
+                const res = await getOne(element);
+                wishlistedProductsDetails.push(res);
+            }));
         }
-        return wishlistedProducts
+
+        return wishlistedProductsDetails
     } catch (error) {
-        
+        console.log(error);
     }
 }
 
