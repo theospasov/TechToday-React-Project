@@ -28,6 +28,15 @@ export async function getAllUserCreated(userId) {
     }
 }
 
+export async function addToWishlist(userId, productId) {
+    try {
+        
+    } catch (error) {
+        
+    }
+}
+
+
 export async function getWishlist(wishlistedProducts) {
     const wishlistedProductsDetails = []
 

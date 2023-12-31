@@ -14,6 +14,8 @@ export default function ProductDetails() {
     const [product, setProduct] = useState({})
     const [comments, setComments] = useState([])
     const {productId} = useParams()
+
+    const isOwner = userId === product._ownerId
    
 
     useEffect(() => {
@@ -48,13 +50,16 @@ export default function ProductDetails() {
         
         
     }
-    // console.log(comments);
-    const isOwner = userId === product._ownerId
+
    
     const deleteButtonClickHandler = async () => {
         
         await productService.remove(productId)
         navigate('/')
+    }
+
+    async function wishlistHandler() {
+        productService.addToWishlist(userId, productId)
     }
 
 
@@ -67,6 +72,11 @@ export default function ProductDetails() {
                     <p className="details-price"> Price: <span>${product.price}</span></p>
                     
                     <p>{product.description}</p>
+                    { isAuthenticated && (
+                        <button className='button' onClick={wishlistHandler}>Add to Wishlist</button>
+                    )
+
+                    }
                     { isOwner && isAuthenticated && (
                         <div className='owner-controls'>
                             <Link to={`/products/${product._id}/edit`} className='button'>Edit</Link>
