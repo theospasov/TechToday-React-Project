@@ -6,6 +6,7 @@ import './ProductDetails.css'
 
 import * as productService from '../../../services/productService'
 import * as commentService from '../../../services/commentService'
+import * as wishlistService from '../../../services/wishlistService'
 import AuthContext from '../../../contexts/authContext'
 
 export default function ProductDetails() {
@@ -59,7 +60,7 @@ export default function ProductDetails() {
     }
 
     async function wishlistHandler() {
-        productService.addToWishlist(userId, productId)
+        wishlistService.addToWishlist(userId, productId)
     }
 
 

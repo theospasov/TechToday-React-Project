@@ -1,16 +1,17 @@
 import { useContext, useEffect, useState } from "react"
-import { getWishlist } from "../../services/productService"
+import { getWishlist } from "../../services/wishlistService"
 import AuthContext from "../../contexts/authContext"
 
 import { ProductCard } from "../Product/ProductCard/ProductCard"
 
 export default function Wishlist() {
-    const {wishlistedProducts} = useContext(AuthContext)
+    const {userId} = useContext(AuthContext)
     const [wishlistedProductsObjects, setwishlistedProductsObjects] = useState([])
 
 
     useEffect(() => {
-        getWishlist(wishlistedProducts)
+        console.log(userId);
+        getWishlist(userId)
             .then(res => setwishlistedProductsObjects(res))
     }, [])
     return (

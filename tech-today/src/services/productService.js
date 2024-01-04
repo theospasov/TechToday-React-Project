@@ -28,33 +28,6 @@ export async function getAllUserCreated(userId) {
     }
 }
 
-export async function addToWishlist(userId, productId) {
-    try {
-        
-    } catch (error) {
-        
-    }
-}
-
-
-export async function getWishlist(wishlistedProducts) {
-    const wishlistedProductsDetails = []
-
-    try {
-        if (wishlistedProducts.length > 0) {
-            
-            await Promise.all(wishlistedProducts.map(async (element) => {
-                const res = await getOne(element);
-                wishlistedProductsDetails.push(res);
-            }));
-        }
-
-        return wishlistedProductsDetails
-    } catch (error) {
-        console.log(error);
-    }
-}
-
 
 export async function add(productData) {
     const result = await request.post(baseUrl, productData)
