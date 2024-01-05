@@ -1462,6 +1462,22 @@
     			_id: "7f1d469a-4df4-4f79-aa81-309f472b5518"
     		},
     	},
+        wishlist: {
+            "15615bc8-d50e-4e99-9409-c06985b6964a": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "userId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "productId": "3564027f-adcd-4425-b2c0-1253d2386c0c",
+                "_createdOn": 1704441132487,
+                "_id": "15615bc8-d50e-4e99-9409-c06985b6964a"
+            }, 
+            "d8eba481-e63d-4cf3-8d88-748e0439cc51": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "userId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "productId": "c64db398-91cd-487c-b900-86058c0422f8",
+                "_createdOn": 1704442715729,
+                "_id": "15615bc8-d50e-4e99-9409-c06985b6964a"
+            }
+        },
     	records: {
     		i01: {
     			name: "John1",

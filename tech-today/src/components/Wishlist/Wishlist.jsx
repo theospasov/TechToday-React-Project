@@ -10,7 +10,6 @@ export default function Wishlist() {
 
 
     useEffect(() => {
-        console.log(userId);
         getWishlist(userId)
             .then(res => setwishlistedProductsObjects(res))
     }, [])

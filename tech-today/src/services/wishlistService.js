@@ -2,6 +2,8 @@ import * as request  from "../lib/request";
 
 const baseUrl = 'http://localhost:3030/data/wishlist'
 
+import { getOne } from './productService'
+
 export async function addToWishlist(userId, productId) {
     try {
          const newWishlistProduct = await request.post(baseUrl, {
@@ -19,12 +21,12 @@ export async function getWishlist(userId) {
     const wishlistedProductsDetails = []
 
     try {
-        const result = await request.get(`${baseUrl}?where=userId%3D%228f414b4f-ab39-4d36-bedb-2ad69da9c830%22&load=author%3D_ownerId%3Ausers`)
+        const result = await request.get(`${baseUrl}?where=userId%3D%22${userId}%22`)
 
-        if (wishlistedProducts.length > 0) {
+        if (result.length > 0) {
             
-            await Promise.all(wishlistedProducts.map(async (element) => {
-                const res = await getOne(element);
+            await Promise.all(result.map(async (element) => {
+                const res = await getOne(element.productId);
                 wishlistedProductsDetails.push(res);
             }));
         }
