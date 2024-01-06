@@ -14,6 +14,7 @@ export default function ProductDetails() {
     const {userId, username, isAuthenticated} = useContext(AuthContext)
     const [product, setProduct] = useState({})
     const [comments, setComments] = useState([])
+    const [isWishlisted, setIsWishlisted] = useState(false)
     const {productId} = useParams()
 
     const isOwner = userId === product._ownerId
@@ -28,9 +29,14 @@ export default function ProductDetails() {
 
                     const commentsData = await commentService.getAll(productId)
                     setComments(commentsData)
+
                 } catch (error) {
                     console.error(error)
                 }
+            }
+            if (userId) {
+                const wishlistStatus = await wishlistService.isWishlisted(userId, productId)
+                setIsWishlisted(!!wishlistStatus.length)
             }
         }
         fetchData();
@@ -60,7 +66,14 @@ export default function ProductDetails() {
     }
 
     async function wishlistHandler() {
-        wishlistService.addToWishlist(userId, productId)
+        if (isWishlisted) {
+                wishlistService.removeFromWishlist(userId, productId)
+            setIsWishlisted(false);
+          } else {
+                wishlistService.addToWishlist(userId, productId)
+            setIsWishlisted(true);
+          }
+ 
     }
 
 
@@ -73,11 +86,15 @@ export default function ProductDetails() {
                     <p className="details-price"> Price: <span>${product.price}</span></p>
                     
                     <p>{product.description}</p>
-                    { isAuthenticated && (
-                        <button className='button' onClick={wishlistHandler}>Add to Wishlist</button>
-                    )
-
+                    {
+                        isAuthenticated && (
+                            <button className='button' onClick={wishlistHandler}>
+                            {isWishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
+                            </button>
+                        )
                     }
+
+                    
                     { isOwner && isAuthenticated && (
                         <div className='owner-controls'>
                             <Link to={`/products/${product._id}/edit`} className='button'>Edit</Link>
