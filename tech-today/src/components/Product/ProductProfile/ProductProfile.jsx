@@ -19,7 +19,6 @@ export default function ProductProfile() {
 
     }, [])
 
-    // console.log(JSON.parse(wishlistedProducts));
     return (
         <div className="profile-products">
             <h2>Hey {username} 👋, {products.length >= 1 ? <span>these are your added products</span> : <span>add some products and they will appear here</span>}</h2>
@@ -34,5 +33,3 @@ export default function ProductProfile() {
         </div>
     )
 }
-
-//http://localhost:3030/data/products?where=_ownerId%3D%2235c62d76-8152-4626-8712-eeb96381bea8%22

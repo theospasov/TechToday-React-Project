@@ -23,11 +23,11 @@ export default function Profile() {
     return (
         <div className="user-profile">
             <ul className="profile-options">
-                    <li><button onClick={menuSwitcher}>Created Products</button></li>
-                    <li><button onClick={menuSwitcher}>Wishlisted Products</button></li>
-                    <li><button onClick={menuSwitcher}>Test Products</button></li>
-                    <li><Link className='profile-nav-add profile-nav' to={'/product/add'}>Add New Product</Link></li>
-                    <li><Link className='profile-nav-logout profile-nav' to={Path.Logout}>Logout</Link></li>
+                    <li><button className='profile-nav' onClick={menuSwitcher}>Created Products</button></li>
+                    <li><button className='profile-nav wishlist' onClick={menuSwitcher}>Wishlisted Products</button></li>
+                    <li className="separator"></li>
+                    <li><Link className='profile-nav new-product' to={'/product/add'}>Add New Product</Link></li>
+                    <li><Link className='profile-nav logout' to={Path.Logout}>Logout</Link></li>
             </ul>
             {menu == 'created' 
             ? <ProductProfile/>

@@ -1,0 +1,8 @@
+.wishlistedProducts {
+    display: flex;
+    gap: 1em;
+    padding-top: 1em;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding-left: 3em;
+}
