@@ -3,6 +3,8 @@ import { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import './ProductDetails.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart, faHeartCirclePlus, faHeartCircleXmark } from '@fortawesome/free-solid-svg-icons'
 
 import * as productService from '../../../services/productService'
 import * as commentService from '../../../services/commentService'
@@ -18,7 +20,7 @@ export default function ProductDetails() {
     const {productId} = useParams()
 
     const isOwner = userId === product._ownerId
-   
+    const dateAdded = new Date(product._createdOn)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -83,13 +85,16 @@ export default function ProductDetails() {
                 <img className="details-image" src={product.imageUrl} />
                 <div className='details-details'>
                     <h1 className="details-name">{product.name}</h1>
+                    <p className='details-added'>Added on {dateAdded.toLocaleDateString()}</p>
                     <p className="details-price"> Price: <span>${product.price}</span></p>
                     
                     <p>{product.description}</p>
                     {
                         isAuthenticated && (
-                            <button className='button' onClick={wishlistHandler}>
-                            {isWishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
+                            <button className='button heart' onClick={wishlistHandler}>
+                                { isWishlisted 
+                                    ? <><FontAwesomeIcon icon={faHeartCircleXmark} /> Remove from Wishlist</> 
+                                    : <><FontAwesomeIcon icon={faHeartCirclePlus} /> Add to Wishlist</>}
                             </button>
                         )
                     }
