@@ -10,14 +10,19 @@ html {
 
 body {
   background-color: #eee;
+
 }
 .site {
   max-width: 1400px;
   margin: 0 auto;
-
 }
 
-/* .site-main {
-  min-height: 400px;
-} */
+.site-main {
+  min-height: 600px;
+}
 
+@media (max-width: 600px) {
+  html {
+    font: 10px/1.5 Helvetica, sans-serif;
+  }
+}

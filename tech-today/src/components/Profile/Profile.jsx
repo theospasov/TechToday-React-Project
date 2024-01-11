@@ -26,8 +26,8 @@ export default function Profile() {
                     <li><button className='profile-nav' onClick={menuSwitcher}>Created Products</button></li>
                     <li><button className='profile-nav wishlist' onClick={menuSwitcher}>Wishlisted Products</button></li>
                     <li className="separator"></li>
-                    <li><Link className='profile-nav new-product' to={'/product/add'}>Add New Product</Link></li>
-                    <li><Link className='profile-nav logout' to={Path.Logout}>Logout</Link></li>
+                    <li className="new-product"><Link className='profile-nav new-product' to={'/product/add'}>Add New Product</Link></li>
+                    <li className="logout"><Link className='profile-nav logout' to={Path.Logout}>Logout</Link></li>
             </ul>
             {menu == 'created' 
             ? <ProductProfile/>

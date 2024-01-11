@@ -46,3 +46,54 @@
     margin-top: 2em;
 }
 
+@media (max-width: 600px) {
+    .user-profile {
+        display: flex;
+        flex-direction: column;
+        padding: 3em 1em;
+    }
+
+    .profile-options {
+        width: 95vw;
+        border-bottom: 0.2rem dotted gray;
+        border-right: none;
+        padding: 0.5em 0.5em;
+        margin-right: 0px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        gap: 2em;
+
+    }
+
+    .profile-nav {
+        width: 120px;
+        display: inline-block;
+        text-align: center;
+        padding: 1em;
+        text-decoration: none;
+        color: black;
+        border: 1px solid white;
+        border-radius: 0.5em;
+        margin-right: 0em;
+        background-color: white;
+    }
+
+    .profile-products {
+        padding-left: 3em;
+    }
+
+    .new-product {
+        margin: 0em;
+    }
+
+    li.new-product {
+        order: -2;
+      }
+    
+    li.logout {
+        order: -1;
+      }
+  }
