@@ -50,7 +50,6 @@
     padding: 0.5em;
     text-decoration: none;
     color: black;
-    /* border: 1px solid black; */
     border-radius: 0.5em;
 }
 
@@ -63,4 +62,13 @@
 
 li {
     list-style: none;
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        width: 98%;
+    }
+    .header-logo-text {
+        display: none;
+    }
 }

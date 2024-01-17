@@ -21,10 +21,11 @@
   flex-direction: column;
   align-items: center;
   width: 120px;
+  font-size: 0.8em;
 }
 
 .heart svg {
-  font-size: 2em 
+  font-size: 1.5em 
 }
 
 
@@ -174,4 +175,55 @@ button.button {
     margin: 0 auto;
     padding-left: 3em;
     flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .product-page {
+
+      max-width: 95%;
+      margin: 0 auto;
+  }
+
+  .product-details {
+      padding: 1em;
+      margin: 0 auto;
+      max-width: 95%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1em;
+      background-color: white;
+      border-radius: 0.5em;
+    
+  }
+
+  .details-image {
+    /* flex: 1 1 55%; */
+    border-radius: 1em;
+    max-width: 700px;
+    height: auto;
+    aspect-ratio: 3/2 auto;
+    max-width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .details-name {
+    font-size: 2em;
+  }
+  
+  p {
+    margin-bottom: 0.5em;
+  }
+
+  .product-comments {
+    max-width: 90%;
+
+  }
+  .user-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+  }
 }

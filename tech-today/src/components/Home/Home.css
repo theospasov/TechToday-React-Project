@@ -26,3 +26,23 @@ h1 {
 
 }
 
+@media (max-width: 600px) {
+    .home-title {
+        font-size: 4em;
+        text-align: center;
+    }
+
+    .product-grid {
+        max-width: 1500px;
+        display: flex;
+        gap: 1em;
+        margin: 0 auto;
+        flex-shrink: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    
+    }
+    
+
+}

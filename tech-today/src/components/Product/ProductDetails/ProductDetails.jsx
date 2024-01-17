@@ -89,6 +89,7 @@ export default function ProductDetails() {
                     <p className="details-price"> Price: <span>${product.price}</span></p>
                     
                     <p>{product.description}</p>
+                    <div className='user-controls'>
                     {
                         isAuthenticated && (
                             <button className='button heart' onClick={wishlistHandler}>
@@ -108,6 +109,8 @@ export default function ProductDetails() {
                         )
 
                     }
+                    </div>
+
 
                 </div>
 
