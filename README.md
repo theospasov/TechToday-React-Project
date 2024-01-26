@@ -8,6 +8,7 @@ This was the course project for the React JS October 2023 Course by SoftUni.
 **The application, including both the backend and frontend, is deployed to Firebase and can be accessed here**: [**TechToday Live Application**](https://techtoday-to-firebase.web.app/)
 
 ![Home Page of TechToday](site_home.png)
+![Product Page](site_products.jpeg)
 
 ## Technologies Used
 ### Main
@@ -23,6 +24,8 @@ This was the course project for the React JS October 2023 Course by SoftUni.
 
 ## Design
 The design and visual elements of this website were created entirely by me. This encompasses the visual layout, HTML and CSS code (**NO templates were used**), and the design of the website's logo.
+
+The application has **responsive design**, optimized for desktop and smartphone.
 
 ## Features
 1. Public Part - Accessible to non-registered users
