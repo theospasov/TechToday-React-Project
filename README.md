@@ -22,7 +22,7 @@ This was the course project for the React JS October 2023 Course by SoftUni.
 - Font Awesome
 
 ## Design
-The design and visual elements of this website were created entirely by me. This encompasses the visual layout, HTML and CSS code (NO templates were used), and the design of the website's logo.
+The design and visual elements of this website were created entirely by me. This encompasses the visual layout, HTML and CSS code (**NO templates were used**), and the design of the website's logo.
 
 ## Features
 1. Public Part - Accessible to non-registered users
